@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para ti, mi amor ❤️</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+      radial-gradient(circle at top, #fff7fa 0%, #f9e7ee 45%, #efd1dc 100%);
+    color: #4b2935;
+    overflow-x: hidden;
+  }
+
+  .hearts span {
+    position: fixed;
+    bottom: -30px;
+    font-size: 18px;
+    animation: float 8s linear infinite;
+    opacity: .55;
+    pointer-events: none;
+  }
+  .hearts span:nth-child(1){left:8%;animation-delay:0s}
+  .hearts span:nth-child(2){left:24%;animation-delay:2s}
+  .hearts span:nth-child(3){left:47%;animation-delay:4s}
+  .hearts span:nth-child(4){left:70%;animation-delay:1s}
+  .hearts span:nth-child(5){left:88%;animation-delay:3s}
+
+  @keyframes float {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    15% { opacity: .6; }
+    100% { transform: translateY(-110vh) rotate(25deg); opacity: 0; }
+  }
+
+  .screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .card {
+    width: min(720px, 100%);
+    background: rgba(255,255,255,.88);
+    border: 1px solid rgba(177, 91, 116, .20);
+    border-radius: 28px;
+    padding: 34px 24px;
+    text-align: center;
+    box-shadow: 0 18px 50px rgba(94, 43, 58, .16);
+    backdrop-filter: blur(5px);
+  }
+
+  .small { font-size: 14px; letter-spacing: 2px; text-transform: uppercase; opacity: .65; }
+  h1 { margin: 10px 0; font-size: clamp(34px, 8vw, 58px); }
+  h2 { font-size: clamp(28px, 6vw, 42px); margin-top: 0; }
+  p { line-height: 1.8; font-size: 18px; }
+
+  button {
+    border: 0;
+    border-radius: 999px;
+    padding: 14px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #8e3d59;
+    color: white;
+    box-shadow: 0 8px 20px rgba(142,61,89,.24);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  button:hover { transform: translateY(-2px); }
+  button.secondary { background: #f1d8e1; color: #6b3248; box-shadow: none; }
+
+  .heart {
+    font-size: 64px;
+    margin: 4px 0 10px;
+    animation: pulse 1.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    50% { transform: scale(1.08); }
+  }
+
+  .hidden { display: none; }
+
+  .letter {
+    text-align: left;
+    background: #fffafc;
+    border-radius: 22px;
+    padding: 28px 24px;
+    margin-top: 18px;
+    border: 1px solid #f0d9e1;
+  }
+
+  .letter p { margin: 0 0 18px; }
+  .signature {
+    text-align: right;
+    margin-top: 24px;
+    font-style: italic;
+    font-size: 20px;
+  }
+
+  .memory {
+    display: grid;
+    gap: 14px;
+    margin-top: 20px;
+  }
+  .memory button {
+    width: 100%;
+    background: white;
+    color: #5e3342;
+    border: 1px solid #eed5df;
+    box-shadow: 0 5px 16px rgba(94,43,58,.08);
+    text-align: left;
+  }
+  .reveal {
+    display: none;
+    background: #fdf0f4;
+    padding: 15px 18px;
+    border-radius: 16px;
+    margin-top: -5px;
+    line-height: 1.7;
+  }
+  .reveal.show { display: block; }
+
+  .distance {
+    margin-top: 26px;
+    padding: 22px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #f8e2ea, #fff7fa);
+  }
+
+  .final {
+    margin-top: 24px;
+    padding: 22px;
+    border-radius: 20px;
+    background: #fff;
+    border: 1px dashed #c7869b;
+  }
+</style>
+</head>
+<body>
+
+<div class="hearts" aria-hidden="true">
+  <span>❤️</span><span>💕</span><span>❤️</span><span>💗</span><span>❤️</span>
+</div>
+
+<section class="screen" id="cover">
+  <div class="card">
+    <div class="small">Hay algo que quiero decirte...</div>
+    <div class="heart">❤️</div>
+    <h1>Para ti, mi amor</h1>
+    <p>No pude entregarte esta carta en persona, así que hice algo para que la distancia no pudiera detenerme.</p>
+    <button onclick="openLetter()">Abrir mi carta 💌</button>
+  </div>
+</section>
+
+<section class="screen hidden" id="content">
+  <div class="card">
+    <div class="small">Una carta desde donde estoy hasta donde estás tú</div>
+    <h2>Lo que a veces no sé decirte</h2>
+
+    <div class="letter">
+      <p>Mi amor:</p>
+
+      <p>
+        Quiero que leas esto con calma, porque hay sentimientos que por mensaje se quedan cortos.
+        A veces quisiera estar frente a ti, abrazarte y decirte todo esto mirándote a los ojos,
+        pero aunque hoy la distancia nos separe, nunca ha podido hacer que te sienta lejos de mi corazón.
+      </p>
+
+      <p>
+        Te amo por quién eres, por la forma en que haces especiales mis días y por todo lo que
+        provocas en mí simplemente siendo tú. Llegaste a mi vida y poco a poco te convertiste
+        en una parte muy importante de ella.
+      </p>
+
+      <p>
+        No te prometo una relación perfecta, pero sí quiero seguir construyendo algo bonito contigo,
+        aprender de lo que vivimos, cuidar lo nuestro y demostrarte con hechos lo mucho que significas para mí.
+      </p>
+
+      <p>
+        Cuando tengo un día pesado, pensar en ti me recuerda por qué vale la pena seguir echándole ganas.
+        Eres una de esas personas que se convierten en motivación sin siquiera intentarlo.
+      </p>
+
+      <p>
+        Y aunque todavía nos toque esperar para tener muchos de esos momentos que imaginamos,
+        quiero que sepas algo: yo sí quiero llegar a ese día. Quiero verte, abrazarte fuerte,
+        disfrutar tu compañía y crear recuerdos que esta pantalla nunca podrá reemplazar.
+      </p>
+
+      <p>
+        Gracias por estar, por quererme y por formar parte de mi vida.
+        Te amo muchísimo, y espero que nunca tengas que dudar de lo importante que eres para mí.
+      </p>
+
+      <div class="signature">
+        Con todo mi amor,<br>
+        Tu lobo 🐺❤️
+      </div>
+    </div>
+
+    <div class="distance">
+      <h3>La distancia no tiene la última palabra.</h3>
+      <p>
+        Hoy estamos lejos, pero cada día que pasa es un día menos para ese abrazo que tanto quiero darte.
+        ❤️
+      </p>
+    </div>
+
+    <h3 style="margin-top:30px;">Ahora toca descubrir tres cositas...</h3>
+
+    <div class="memory">
+      <button onclick="reveal(1)">💗 Toca aquí: lo que siento cuando pienso en ti</button>
+      <div class="reveal" id="r1">
+        Siento tranquilidad, ilusión y unas ganas enormes de seguir compartiendo mi vida contigo.
+      </div>
+
+      <button onclick="reveal(2)">🌙 Toca aquí: lo que deseo para nosotros</button>
+      <div class="reveal" id="r2">
+        Que sigamos creciendo juntos, que aprendamos a cuidarnos mejor y que llegue el momento
+        en que la distancia sea solo un recuerdo.
+      </div>
+
+      <button onclick="reveal(3)">💌 Toca aquí: una última cosa...</button>
+      <div class="reveal" id="r3">
+        No importa cuántos kilómetros haya entre nosotros: hay una parte de mi corazón que ya eligió quedarse contigo.
+      </div>
+    </div>
+
+    <div class="final">
+      <p><strong>¿Quieres abrir el último mensaje?</strong></p>
+      <button onclick="finalMessage()">Abrir ❤️</button>
+      <p id="finalText" class="hidden">
+        Te amo, mi amor. Hoy, mañana y todos los días que nos falten por vivir. ❤️🐺
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  function openLetter() {
+    document.getElementById("cover").classList.add("hidden");
+    document.getElementById("content").classList.remove("hidden");
+    window.scrollTo({top:0, behavior:"smooth"});
+  }
+
+  function reveal(n) {
+    document.getElementById("r" + n).classList.toggle("show");
+  }
+
+  function finalMessage() {
+    document.getElementById("finalText").classList.remove("hidden");
+  }
+</script>
+
+</body>
+</html>
